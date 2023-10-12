@@ -1,4 +1,5 @@
-import { IconButton, MenuItem, MenuSection, MenuV2 } from '@rocket.chat/fuselage';
+import type { IconButton } from '@rocket.chat/fuselage';
+import { MenuItem, MenuSection, MenuV2 } from '@rocket.chat/fuselage';
 import { useTranslation } from '@rocket.chat/ui-contexts';
 import type { ComponentProps, ReactNode } from 'react';
 import React from 'react';
@@ -13,17 +14,17 @@ type GenericMenuCommonProps = {
 };
 type GenericMenuConditionalProps =
 	| {
-			sections?: {
-				title?: ReactNode;
-				items: GenericMenuItemProps[];
-				permission?: boolean | '' | 0 | null | undefined;
-			}[];
-			items?: never;
-	  }
+		sections?: {
+			title?: ReactNode;
+			items: GenericMenuItemProps[];
+			permission?: boolean | '' | 0 | null | undefined;
+		}[];
+		items?: never;
+	}
 	| {
-			items?: GenericMenuItemProps[];
-			sections?: never;
-	  };
+		items?: GenericMenuItemProps[];
+		sections?: never;
+	};
 
 type GenericMenuProps = GenericMenuCommonProps & GenericMenuConditionalProps & Omit<ComponentProps<typeof MenuV2>, 'children'>;
 
@@ -42,12 +43,6 @@ const GenericMenu = ({ title, icon = 'menu', onAction, ...props }: GenericMenuPr
 	const handleItems = (items: GenericMenuItemProps[]) =>
 		hasIcon ? items.map((item) => ({ ...item, gap: !item.icon && !item.status })) : items;
 
-	const isMenuEmpty = !(sections && sections.length > 0) && !(items && items.length > 0);
-
-	if (isMenuEmpty) {
-		return <IconButton icon={icon} disabled />;
-	}
-
 	return (
 		<>
 			{sections && (
@@ -62,8 +57,7 @@ const GenericMenu = ({ title, icon = 'menu', onAction, ...props }: GenericMenuPr
 						<MenuSection
 							title={typeof title === 'string' && t.has(title) ? t(title) : title}
 							items={handleItems(items)}
-							key={`${title}-${key}`}
-						>
+							key={`${title}-${key}`}>
 							{(item) => (
 								<MenuItem key={item.id}>
 									<GenericMenuItem {...item} />
