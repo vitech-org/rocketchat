@@ -18,7 +18,7 @@ services:
       MONGO_OPLOG_URL: "${MONGO_OPLOG_URL:\
         -mongodb://${MONGODB_ADVERTISED_HOSTNAME:-mongodb}:${MONGODB_INITIAL_PRIMARY_PORT_NUMBER:-27017}/\
         local?replicaSet=${MONGODB_REPLICA_SET_NAME:-rs0}}"
-      ROOT_URL: $DOMAIN
+      ROOT_URL: ${DOMAIN}
       PORT: ${PORT:-3000}
       DEPLOY_METHOD: docker
       DEPLOY_PLATFORM: ${DEPLOY_PLATFORM:-}
@@ -45,3 +45,21 @@ services:
       MONGODB_ENABLE_JOURNAL: ${MONGODB_ENABLE_JOURNAL:-true}
       ALLOW_EMPTY_PASSWORD: ${ALLOW_EMPTY_PASSWORD:-yes}
 
+  nginx:
+    image: '${NGINX_IMAGE:-nginx:latest}'
+    container_name: '${NGINX_CONTAINER_NAME:-nginx}'
+    hostname: '${NGINX_HOSTNAME:-nginx}'
+    restart: always
+    depends_on:
+      - mongodb
+      - rocketchat
+    volumes:
+      - ./nginx/src/conf.d:/etc/nginx/conf.d
+      - ./nginx/src/data/:/etc/nginx/data
+      - ./nginx/src/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/src/default.conf:/etc/nginx/default.conf
+      - ./nginx/var/cache/:/etc/nginx/cache/
+      - ./nginx/var/log/:/var/log/nginx/
+    ports:
+      - '${NGINX_SERVER_HTTP_PORT:-80}:80'
+      - '${NGINX_SERVER_HTTPS_PORT:-443}:443'
