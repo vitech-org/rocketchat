@@ -106,7 +106,7 @@ const MailExportForm: FC<MailExportFormProps> = ({ onCancel, rid }) => {
 		<FieldGroup>
 			<Field>
 				<Callout onClick={clearSelection} title={t('Messages_selected')} type={count > 0 ? 'success' : 'info'}>
-					<p>{`${count} Messages selected`}</p>
+					<p>{`${count} پیام انتخاب شده`}</p>
 					{count > 0 && (
 						<Box is='p' className={clickable}>
 							{t('Click_here_to_clear_the_selection')}

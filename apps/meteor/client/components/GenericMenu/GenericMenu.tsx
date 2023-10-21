@@ -57,7 +57,8 @@ const GenericMenu = ({ title, icon = 'menu', onAction, ...props }: GenericMenuPr
 						<MenuSection
 							title={typeof title === 'string' && t.has(title) ? t(title) : title}
 							items={handleItems(items)}
-							key={`${title}-${key}`}>
+							key={`${title}-${key}`}
+						>
 							{(item) => (
 								<MenuItem key={item.id}>
 									<GenericMenuItem {...item} />

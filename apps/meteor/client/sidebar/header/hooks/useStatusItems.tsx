@@ -58,7 +58,7 @@ export const useStatusItems = (user: IUser): GenericMenuItemProps[] => {
 	const statusItems = Object.values(userStatus.list)
 		.filter(filterInvisibleStatus)
 		.map((status) => {
-			const name = status.localizeName ? translateStatusName(t, status) : status.name;
+			var name = status.localizeName ? translateStatusName(t, status) : status.name;
 			const modifier = status.statusType || user?.status;
 			return {
 				id: status.id,
