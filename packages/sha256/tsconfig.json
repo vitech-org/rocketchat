@@ -4,10 +4,10 @@
 		"outDir": "dist",
 		"rootDir": "src",
 		"allowJs": true,
-		"noImplicitAny": true,
+		"noImplicitAny": false,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
-		"strictNullChecks": true,
+		"strictNullChecks": true
 	},
 	"include": ["src"]
 }
