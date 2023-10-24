@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\packages",
+    "\\packages\\gazzodown",
+    "\\packages\\gazzodown\\src",
+    "\\packages\\gazzodown\\src\\elements",
+    "\\packages\\ui-contexts"
   ],
-  "SelectedNode": "\\C:\\Users\\khani.m.ARIACONTROL\\Source\\Repos\\rocketchat",
-  "PreviewInSolutionExplorer": false
+  "PreviewInSolutionExplorer": true
 }
