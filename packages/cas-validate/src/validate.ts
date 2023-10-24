@@ -245,7 +245,8 @@ export function validate(options: CasOptions, ticket: string, callback: CasCallb
 					}
 
 					// Look for optional proxies
-					const proxies = [];
+					//const proxies = [];
+					const proxies: string[] = [];
 					const elemProxies = elemSuccess.find('cas\\:proxies');
 					for (let i = 0; i < elemProxies.length; i++) {
 						proxies.push(cheerio(elemProxies[i]).text().trim());
