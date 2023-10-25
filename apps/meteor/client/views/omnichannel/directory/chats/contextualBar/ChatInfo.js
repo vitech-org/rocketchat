@@ -94,6 +94,7 @@ function ChatInfo({ id, route }) {
 	});
 
 	const customFieldEntries = Object.entries(livechatData || {}).filter(([key]) => checkIsVisibleAndScopeRoom(key) && livechatData[key]);
+	debugger;
 	if (ts.length > 9)
 		ts = Intl.DateTimeFormat('fa-IR').format(new Date(ts))
 

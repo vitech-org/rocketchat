@@ -66,6 +66,7 @@ const UserInfo = ({
 	const userDisplayName = useUserDisplayName({ name, username });
 	const userCustomFields = useUserCustomFields(customFields);
 
+	debugger;
 	if (createdAt.length > 9)
 		createdAt = Intl.DateTimeFormat('fa-IR').format(new Date(createdAt))
 

@@ -95,7 +95,8 @@ const ContactInfo = ({ id: contactId, rid: roomId = '', route }: ContactInfoProp
 	if (isError || !contact) {
 		return <Box mbs={16}>{t('Contact_not_found')}</Box>;
 	}
-
+	debugger;
+	
 	if (contact && contact.ts.length > 9)
 		contact.ts = Intl.DateTimeFormat('fa-IR').format(new Date(contact.ts))
 

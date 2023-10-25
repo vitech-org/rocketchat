@@ -46,7 +46,8 @@ const OAuthAppsTable = (): ReactElement => {
 			<GenericTableHeaderCell key='_createdAt'>{t('Created_at')}</GenericTableHeaderCell>
 		</>
 	);
-
+	debugger;
+	
 	if (isSuccess && data?.oauthApps.length > 0) {
 		data.oauthApps.forEach((element) => {
 			if (element._createdAt.length > 10)
