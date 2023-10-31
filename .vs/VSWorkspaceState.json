@@ -1,11 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\packages",
-    "\\packages\\gazzodown",
-    "\\packages\\gazzodown\\src",
-    "\\packages\\gazzodown\\src\\elements",
-    "\\packages\\ui-contexts"
+    "\\apps",
+    "\\apps\\meteor",
+    "\\apps\\meteor\\client",
+    "\\apps\\meteor\\client\\components",
+    "\\apps\\meteor\\client\\components\\UserInfo"
   ],
   "PreviewInSolutionExplorer": true
 }

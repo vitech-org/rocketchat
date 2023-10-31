@@ -95,11 +95,11 @@ const ChannelsTable = () => {
 	);
 
 	if (isFetched) {
-		debugger;
-		data.result.forEach((element) => {
-			if (element.ts.length > 10)
-				element.ts = Intl.DateTimeFormat('fa-IR').format(new Date(element.ts))
-		})
+		
+		// data.result.forEach((element) => {
+		// 	if (element.ts.length > 10)
+		// 		element.ts = Intl.DateTimeFormat('fa-IR').format(new Date(element.ts))
+		// })
 	}
 	return (
 		<>
