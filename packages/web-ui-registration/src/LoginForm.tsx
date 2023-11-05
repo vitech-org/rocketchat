@@ -192,9 +192,9 @@ export const LoginForm = ({ setLoginRoute }: { setLoginRoute: DispatchLoginRoute
 							</Button>
 						</ButtonGroup>
 						<p>
-							<Trans i18nKey='registration.page.login.register'>
-								New here? <ActionLink onClick={(): void => setLoginRoute('register')}>Create User</ActionLink>
-							</Trans>
+							{/*<Trans i18nKey='registration.page.login.register'>*/}
+							{/*	New here? <ActionLink onClick={(): void => setLoginRoute('register')}>Create User</ActionLink>*/}
+							{/*</Trans>*/}
 						</p>
 					</Form.Footer>
 				</>

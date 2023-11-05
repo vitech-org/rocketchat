@@ -92,13 +92,6 @@ const UsersTable = ({ workspace = 'local' }): ReactElement => {
 		},
 		[directRoute],
 	);
-	if (isFetched) {
-		debugger;
-		data.result.forEach((element) => {
-			if (element.createdAt.length > 10)
-				element.createdAt = Intl.DateTimeFormat('fa-IR').format(new Date(element.createdAt))
-		})
-	}
 
 	return (
 		<>
