@@ -5,7 +5,7 @@
 		"rootDir": "src",
 		"allowJs": true,
 		"noImplicitAny": false,
-		"noUnusedLocals": true,
+		"noUnusedLocals": false,
 		"noUnusedParameters": true,
 		"strictNullChecks": true
 	},
