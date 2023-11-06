@@ -90,7 +90,7 @@ const MessageToolbox = ({
 	}
 
 	const isReactionAllowed = actionsQueryResult.data?.message.find(({ id }) => id === 'reaction-message');
-debugger;
+
 	const handleSetReaction = (emoji: string) => {
 		setReaction(`:${emoji}:`, message._id);
 		addRecentEmoji(emoji);

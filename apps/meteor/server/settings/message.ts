@@ -238,97 +238,97 @@ export const createMessageSettings = () =>
 			public: true,
 			i18nDescription: 'Message_VideoRecorderEnabledDescription',
 		});
-		await this.add('AutoTranslate_Enabled', false, {
-			type: 'boolean',
-			group: 'Message',
-			section: 'AutoTranslate',
-			public: true,
-		});
+		//await this.add('AutoTranslate_Enabled', false, {
+		//	type: 'boolean',
+		//	group: 'Message',
+		//	section: 'AutoTranslate',
+		//	public: true,
+		//});
 
-		await this.add('AutoTranslate_AutoEnableOnJoinRoom', false, {
-			type: 'boolean',
-			group: 'Message',
-			section: 'AutoTranslate',
-			public: true,
-			enableQuery: [{ _id: 'AutoTranslate_Enabled', value: true }],
-		});
+		//await this.add('AutoTranslate_AutoEnableOnJoinRoom', false, {
+		//	type: 'boolean',
+		//	group: 'Message',
+		//	section: 'AutoTranslate',
+		//	public: true,
+		//	enableQuery: [{ _id: 'AutoTranslate_Enabled', value: true }],
+		//});
 
-		await this.add('AutoTranslate_ServiceProvider', 'google-translate', {
-			type: 'select',
-			group: 'Message',
-			section: 'AutoTranslate',
-			values: [
-				{
-					key: 'google-translate',
-					i18nLabel: 'AutoTranslate_Google',
-				},
-				{
-					key: 'deepl-translate',
-					i18nLabel: 'AutoTranslate_DeepL',
-				},
-				{
-					key: 'microsoft-translate',
-					i18nLabel: 'AutoTranslate_Microsoft',
-				},
-			],
-			enableQuery: [{ _id: 'AutoTranslate_Enabled', value: true }],
-			i18nLabel: 'AutoTranslate_ServiceProvider',
-			public: true,
-		});
+		//await this.add('AutoTranslate_ServiceProvider', 'google-translate', {
+		//	type: 'select',
+		//	group: 'Message',
+		//	section: 'AutoTranslate',
+		//	values: [
+		//		{
+		//			key: 'google-translate',
+		//			i18nLabel: 'AutoTranslate_Google',
+		//		},
+		//		{
+		//			key: 'deepl-translate',
+		//			i18nLabel: 'AutoTranslate_DeepL',
+		//		},
+		//		{
+		//			key: 'microsoft-translate',
+		//			i18nLabel: 'AutoTranslate_Microsoft',
+		//		},
+		//	],
+		//	enableQuery: [{ _id: 'AutoTranslate_Enabled', value: true }],
+		//	i18nLabel: 'AutoTranslate_ServiceProvider',
+		//	public: true,
+		//});
 
-		await this.add('AutoTranslate_GoogleAPIKey', '', {
-			type: 'string',
-			group: 'Message',
-			section: 'AutoTranslate_Google',
-			public: false,
-			i18nLabel: 'AutoTranslate_APIKey',
-			enableQuery: [
-				{
-					_id: 'AutoTranslate_Enabled',
-					value: true,
-				},
-				{
-					_id: 'AutoTranslate_ServiceProvider',
-					value: 'google-translate',
-				},
-			],
-		});
+		//await this.add('AutoTranslate_GoogleAPIKey', '', {
+		//	type: 'string',
+		//	group: 'Message',
+		//	section: 'AutoTranslate_Google',
+		//	public: false,
+		//	i18nLabel: 'AutoTranslate_APIKey',
+		//	enableQuery: [
+		//		{
+		//			_id: 'AutoTranslate_Enabled',
+		//			value: true,
+		//		},
+		//		{
+		//			_id: 'AutoTranslate_ServiceProvider',
+		//			value: 'google-translate',
+		//		},
+		//	],
+		//});
 
-		await this.add('AutoTranslate_DeepLAPIKey', '', {
-			type: 'string',
-			group: 'Message',
-			section: 'AutoTranslate_DeepL',
-			public: false,
-			i18nLabel: 'AutoTranslate_APIKey',
-			enableQuery: [
-				{
-					_id: 'AutoTranslate_Enabled',
-					value: true,
-				},
-				{
-					_id: 'AutoTranslate_ServiceProvider',
-					value: 'deepl-translate',
-				},
-			],
-		});
+		//await this.add('AutoTranslate_DeepLAPIKey', '', {
+		//	type: 'string',
+		//	group: 'Message',
+		//	section: 'AutoTranslate_DeepL',
+		//	public: false,
+		//	i18nLabel: 'AutoTranslate_APIKey',
+		//	enableQuery: [
+		//		{
+		//			_id: 'AutoTranslate_Enabled',
+		//			value: true,
+		//		},
+		//		{
+		//			_id: 'AutoTranslate_ServiceProvider',
+		//			value: 'deepl-translate',
+		//		},
+		//	],
+		//});
 
-		await this.add('AutoTranslate_MicrosoftAPIKey', '', {
-			type: 'string',
-			group: 'Message',
-			section: 'AutoTranslate_Microsoft',
-			public: false,
-			i18nLabel: 'AutoTranslate_Microsoft_API_Key',
-			enableQuery: [
-				{
-					_id: 'AutoTranslate_Enabled',
-					value: true,
-				},
-				{
-					_id: 'AutoTranslate_ServiceProvider',
-					value: 'microsoft-translate',
-				},
-			],
-		});
+		//await this.add('AutoTranslate_MicrosoftAPIKey', '', {
+		//	type: 'string',
+		//	group: 'Message',
+		//	section: 'AutoTranslate_Microsoft',
+		//	public: false,
+		//	i18nLabel: 'AutoTranslate_Microsoft_API_Key',
+		//	enableQuery: [
+		//		{
+		//			_id: 'AutoTranslate_Enabled',
+		//			value: true,
+		//		},
+		//		{
+		//			_id: 'AutoTranslate_ServiceProvider',
+		//			value: 'microsoft-translate',
+		//		},
+		//	],
+		//});
 		await this.add('HexColorPreview_Enabled', true, {
 			type: 'boolean',
 			i18nLabel: 'Enabled',

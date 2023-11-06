@@ -3663,5 +3663,21 @@
   "Learn_more_about_current_chats": "درباره چت های فعلی بیشتر بیاموزید",
   "Explore_marketplace": "بازار را کاوش کنید",
   "Set_random_password_and_send_by_email": "تنظیم کلمه عبور تصادفی و ارسال با ایمیل",
-  "Send_Email_SMTP_Warning": "برای ارسال ایمیل نیاز هست تا <a href=\"{{url}}\">راه اندازی میل سرور SMTp</a>"
+  "Send_Email_SMTP_Warning": "برای ارسال ایمیل نیاز هست تا <a href=\"{{url}}\">راه اندازی میل سرور SMTp</a>",
+  "New": "جدید",
+  "Invite": "دعوت نامه",
+  "Presence_service_cap": "خدمات حضوری",
+  "Service_status": "وضعیت سرویس",
+  "Active_connections": "کاننکشن فعالی",
+  "Community_cap_description": "فضای کاری انجمن دارای سقف 200 اتصال همزمان است، اگرچه می‌توانید اتصالات بیشتری فعال داشته باشید، پس از رسیدن به این محدودیت، نمی‌توانید وضعیت کاربران را ببینید. این بر توانایی آنها برای ارسال و دریافت پیام تأثیر نمی گذارد.",
+  "More_about_Enterprise_Edition": "اطلاعات بیشتر در خصوص نسخه سازمانی",
+  "Enterprise_License_Description": "اگر فضای کاری شما ثبت شده است و مجوز توسط رسا چت ابری ارائه شده است، نیازی به به روز رسانی دستی مجوز در اینجا ندارید..",
+  "Items_per_page:": "آیتم در هر صفحه:",
+  "Showing_results_of": "نمایش نتایج %s - %s of %s",
+  "Removed__roomName__from_this_team": "<strong>حذف </strong> #{{roomName}} از این تیم انجام شد",
+  "Removed__username__from_team": "<strong>حذف </strong> @{{user_removed}} از این تیم انجام شد",
+  "Removed__roomName__from_the_team": "حذف #{{roomName}}  از این تیم انجام شد",
+  "Removed__username__from_the_team": "حذف @{{user_removed}} از این تیم انجام شد",
+  "User_added_to": "اضافه شد {{user_added}}",
+  "changed_room_description_to__room_description_": "توضیحات اتاق به : {{room_description}} تغییر یافت"
 }

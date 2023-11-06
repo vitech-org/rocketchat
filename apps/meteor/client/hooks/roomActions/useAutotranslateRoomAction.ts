@@ -7,7 +7,7 @@ const AutoTranslate = lazy(() => import('../../views/room/contextualBar/AutoTran
 
 export const useAutotranslateRoomAction = () => {
 	const permitted = usePermission('auto-translate');
-	const enabled = useSetting('AutoTranslate_Enabled', false);
+	const enabled = false;	/*useSetting('AutoTranslate_Enabled', false);*/
 
 	return useMemo((): RoomToolboxActionConfig | undefined => {
 		if (!permitted || !enabled) {

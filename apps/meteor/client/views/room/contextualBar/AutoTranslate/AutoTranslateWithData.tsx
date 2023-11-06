@@ -49,16 +49,16 @@ const AutoTranslateWithData = (): ReactElement => {
 		}
 	}, [subscription?.autoTranslate, subscription?.autoTranslateLanguage, handleChangeLanguage, userLanguage]);
 
-	return (
-		<AutoTranslate
-			language={currentLanguage}
-			languages={translateData ? translateData.languages.map((language) => [language.language, language.name]) : []}
-			handleSwitch={handleSwitch}
-			handleChangeLanguage={handleChangeLanguage}
-			translateEnable={!!subscription?.autoTranslate}
-			handleClose={closeTab}
-		/>
-	);
+	return (<></>);
+		//<AutoTranslate
+		//	language={currentLanguage}
+		//	languages={translateData ? translateData.languages.map((language) => [language.language, language.name]) : []}
+		//	handleSwitch={handleSwitch}
+		//	handleChangeLanguage={handleChangeLanguage}
+		//	translateEnable={!!subscription?.autoTranslate}
+		//	handleClose={closeTab}
+		///>
+	/*);*/
 };
 
 export default memo(AutoTranslateWithData);
