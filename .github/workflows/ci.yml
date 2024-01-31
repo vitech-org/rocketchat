@@ -140,7 +140,7 @@ jobs:
   build-prod:
     name: 📦 Meteor Build - official
     needs: [release-versions, packages-build]
-    if: (github.event_name == 'release' || github.ref == 'refs/heads/develop')
+    if: (github.event_name == 'release' || github.ref == 'refs/heads/default')
     runs-on: ubuntu-20.04
 
     steps:
