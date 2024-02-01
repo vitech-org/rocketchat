@@ -65,10 +65,10 @@ const UserInfo = ({
 	const timeAgo = useTimeAgo();
 	const userDisplayName = useUserDisplayName({ name, username });
 	const userCustomFields = useUserCustomFields(customFields);
-	if (createdAt.length > 9)
+	if (createdAt.startsWith('2'))
 		createdAt = Intl.DateTimeFormat('fa-IR').format(new Date(createdAt))
 
-	if (lastLogin.length > 9)
+	if (lastLogin.startsWith('2'))
 		lastLogin = Intl.DateTimeFormat('fa-IR').format(new Date(lastLogin))
 
 	return (
