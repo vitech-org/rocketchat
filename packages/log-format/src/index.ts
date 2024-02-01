@@ -57,7 +57,7 @@ const platformColor = (color: NonGrayColors): `${NonGrayColors}Bright` | NonGray
 
 const prettify = function (line = '', color?: Colors) {
 	if (!color) return line;
-	// @ts-expect-error - greyBright doesnt exists, its just gray :(
+	// ts-expect-error - greyBright doesnt exists, its just gray :(
 	return chalk[color](line);
 };
 
@@ -83,7 +83,7 @@ export const format = (obj: LogMessage, options: Options = {}) => {
 	}
 
 	FORMATTED_KEYS.forEach((key) => {
-		// @ts-expect-error - we know this is good
+		// ts-expect-error - we know this is good
 		delete obj[key];
 	});
 
@@ -114,7 +114,7 @@ export const format = (obj: LogMessage, options: Options = {}) => {
 		appInfo = `[${appInfo}] `;
 	}
 
-	const sourceInfoParts = [];
+	const sourceInfoParts: any[] = [];
 	if (program) {
 		sourceInfoParts.push(program);
 	}
