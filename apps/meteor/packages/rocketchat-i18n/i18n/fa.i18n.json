@@ -3574,7 +3574,8 @@
   "Message_Code_highlight_Description": "فهرست زبان‌های جدا شده با کاما (همه زبان‌های پشتیبانی‌شده در [highlight.js](https://github.com/highlightjs/highlight.js/tree/11.6.0#supported-languages)) که برای برجسته کردن بلوک‌های کد استفاده می‌شوند",
   "Message_CustomDomain_AutoLink": "لیست سفید دامنه سفارشی برای پیوند خودکار",
   "Message_Attachments_Thumbnails_EnabledDesc": "برای کاهش استفاده از پهنای باند، تصاویر کوچک به جای تصویر اصلی ارائه خواهند شد. تصاویر با وضوح اصلی را می توان با استفاده از نماد کنار نام پیوست دانلود کرد.",
-  "Message_Attachments_Strip_ExifDescription": "ابرداده های EXIF را از فایل های تصویری (jpeg، tiff و غیره) حذف می کند. این تنظیم عطف به ماسبق نیست، بنابراین فایل‌هایی که در حالت غیرفعال آپلود می‌شوند دارای داده EXIF خواهند بود"
-
+  "Message_Attachments_Strip_ExifDescription": "ابرداده های EXIF را از فایل های تصویری (jpeg، tiff و غیره) حذف می کند. این تنظیم عطف به ماسبق نیست، بنابراین فایل‌هایی که در حالت غیرفعال آپلود می‌شوند دارای داده EXIF خواهند بود",
+  "Show_usernames" :"نمایش نام کاربری",
+  "Show_or_hide_the_username_of_message_authors": "نمایش یا مخفی سازی نام کاربر در پیام ها"
 
 }

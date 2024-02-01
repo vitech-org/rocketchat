@@ -65,6 +65,11 @@ const UserInfo = ({
 	const timeAgo = useTimeAgo();
 	const userDisplayName = useUserDisplayName({ name, username });
 	const userCustomFields = useUserCustomFields(customFields);
+	if (createdAt.length > 9)
+		createdAt = Intl.DateTimeFormat('fa-IR').format(new Date(createdAt))
+
+	if (lastLogin.length > 9)
+		lastLogin = Intl.DateTimeFormat('fa-IR').format(new Date(lastLogin))
 
 	return (
 		<ContextualbarScrollableContent p={24} {...props}>
@@ -111,7 +116,7 @@ const UserInfo = ({
 					{canViewAllInfo && (
 						<InfoPanel.Field>
 							<InfoPanel.Label>{t('Last_login')}</InfoPanel.Label>
-							<InfoPanel.Text>{lastLogin ? timeAgo(lastLogin) : t('Never')}</InfoPanel.Text>
+							<InfoPanel.Text>{lastLogin ? lastLogin : t('Never')}</InfoPanel.Text>
 						</InfoPanel.Field>
 					)}
 
@@ -178,7 +183,7 @@ const UserInfo = ({
 					{createdAt && (
 						<InfoPanel.Field>
 							<InfoPanel.Label>{t('Created_at')}</InfoPanel.Label>
-							<InfoPanel.Text>{timeAgo(createdAt)}</InfoPanel.Text>
+							<InfoPanel.Text>{createdAt}</InfoPanel.Text>
 						</InfoPanel.Field>
 					)}
 				</InfoPanel.Section>
