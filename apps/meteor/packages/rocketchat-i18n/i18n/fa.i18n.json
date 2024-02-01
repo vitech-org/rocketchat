@@ -3576,6 +3576,11 @@
   "Message_Attachments_Thumbnails_EnabledDesc": "برای کاهش استفاده از پهنای باند، تصاویر کوچک به جای تصویر اصلی ارائه خواهند شد. تصاویر با وضوح اصلی را می توان با استفاده از نماد کنار نام پیوست دانلود کرد.",
   "Message_Attachments_Strip_ExifDescription": "ابرداده های EXIF را از فایل های تصویری (jpeg، tiff و غیره) حذف می کند. این تنظیم عطف به ماسبق نیست، بنابراین فایل‌هایی که در حالت غیرفعال آپلود می‌شوند دارای داده EXIF خواهند بود",
   "Show_usernames" :"نمایش نام کاربری",
-  "Show_or_hide_the_username_of_message_authors": "نمایش یا مخفی سازی نام کاربر در پیام ها"
-
+  "Show_or_hide_the_username_of_message_authors": "نمایش یا مخفی سازی نام کاربر در پیام ها",
+  "Layout_Sidenav_Footer_Dark": "انتهای منوی کنار - تیم سیاه",
+  "Custom_Script_Logged_Out_Description": "اسکریپت سفارشی که همیشه و برای هر کاربری که وارد نشده است اجرا می شود. (هر وقت وارد صفحه ورود شدید)",
+  "Mentions_with_@_symbol": "منشن با علامت @",
+  "_symbol_description@_symbol": "توضیحات با علامت @",
+  "Export_as_file": "استخراج به صورت فایل",
+  "Mark_read": "خوانده شده",
 }
