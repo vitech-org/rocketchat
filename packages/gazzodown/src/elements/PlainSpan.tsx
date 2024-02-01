@@ -22,7 +22,7 @@ const PlainSpan = ({ text }: PlainSpanProps): ReactElement => {
 					{chunks.map((chunk, i) => {
 						if (i % 2 === 0) {
 							return (
-								<mark title={t('Highlighted_chosen_word')} key={i} className='highlight-text'>
+								<mark key={i} className='highlight-text'>
 									{chunk}
 								</mark>
 							);

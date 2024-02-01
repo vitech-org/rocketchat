@@ -172,8 +172,8 @@ export class OmnichannelTranscript extends ServiceClass implements IOmnichannelT
 				});
 				continue;
 			}
-			const files = [];
-			const quotes = [];
+			const files: any[] = [];
+			const quotes: any[] = [];
 
 			for await (const attachment of message.attachments) {
 				if (isQuoteAttachment(attachment)) {
