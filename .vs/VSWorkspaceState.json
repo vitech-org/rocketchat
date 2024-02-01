@@ -5,7 +5,12 @@
     "\\apps\\meteor",
     "\\apps\\meteor\\client",
     "\\apps\\meteor\\client\\components",
-    "\\apps\\meteor\\client\\components\\UserInfo"
+    "\\apps\\meteor\\client\\components\\UserInfo",
+    "\\packages",
+    "\\packages\\gazzodown",
+    "\\packages\\gazzodown\\src",
+    "\\packages\\gazzodown\\src\\elements",
+    "\\packages\\ui-contexts"
   ],
-  "PreviewInSolutionExplorer": false
+  "PreviewInSolutionExplorer": true
 }
