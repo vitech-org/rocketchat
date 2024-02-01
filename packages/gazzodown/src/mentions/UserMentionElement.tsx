@@ -7,12 +7,13 @@ type UserMentionElementProps = {
 	mention: string;
 };
 
-
 const UserMentionElement = ({ mention }: UserMentionElementProps): ReactElement => {
 	const { resolveUserMention, onUserMentionClick, isMobile, ownUserId, useRealName } = useContext(MarkupInteractionContext);
 
 	const resolved = useMemo(() => resolveUserMention?.(mention), [mention, resolveUserMention]);
 	const handleClick = useMemo(() => (resolved ? onUserMentionClick?.(resolved) : undefined), [resolved, onUserMentionClick]);
+
+	const showRealName = useRealName && !isMobile;
 
 	if (mention === 'all') {
 		return <Message.Highlight variant='relevant'>all</Message.Highlight>;
