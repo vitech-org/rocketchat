@@ -19,12 +19,12 @@ const VerticalTemplate = ({ children }: { children: ReactNode }): ReactElement =
 			logo={!hideLogo && customLogo ? <Box is='img' maxHeight='x40' mi='neg-x8' src={customLogo} alt='Logo' /> : <></>}
 		>
 			<VerticalWizardLayoutTitle>
-				<RegisterTitle />
+				{/* <RegisterTitle /> */}
 			</VerticalWizardLayoutTitle>
 			<LoginPoweredBy />
 			{children}
 			<VerticalWizardLayoutFooter>
-				<LoginTerms />
+				{/* <LoginTerms /> */}
 				<LoginSwitchLanguageFooter />
 			</VerticalWizardLayoutFooter>
 		</VerticalWizardLayout>

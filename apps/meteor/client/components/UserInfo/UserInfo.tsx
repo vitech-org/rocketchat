@@ -68,7 +68,7 @@ const UserInfo = ({
 	if (createdAt.startsWith('2'))
 		createdAt = Intl.DateTimeFormat('fa-IR').format(new Date(createdAt))
 
-	if (lastLogin.startsWith('2'))
+	if (lastLogin && lastLogin.startsWith('2'))
 		lastLogin = Intl.DateTimeFormat('fa-IR').format(new Date(lastLogin))
 
 	return (
