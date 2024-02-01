@@ -38,7 +38,6 @@ const OAuthAppsTable = (): ReactElement => {
 		[router],
 	);
 
-
 	const headers = (
 		<>
 			<GenericTableHeaderCell key='name'>{t('Name')}</GenericTableHeaderCell>
@@ -46,15 +45,6 @@ const OAuthAppsTable = (): ReactElement => {
 			<GenericTableHeaderCell key='_createdAt'>{t('Created_at')}</GenericTableHeaderCell>
 		</>
 	);
-	debugger;
-	
-	if (isSuccess && data?.oauthApps.length > 0) {
-		data.oauthApps.forEach((element) => {
-			if (element._createdAt.length > 10)
-				element._createdAt = new Intl.DateTimeFormat('fa-IR').format(new Date(element._createdAt.substring(0, 10))).toString(); //+ " " + element._createdAt.substring(11, 19);
-		}
-		);
-	}
 
 	return (
 		<>
@@ -66,7 +56,6 @@ const OAuthAppsTable = (): ReactElement => {
 					</GenericTableBody>
 				</GenericTable>
 			)}
-
 			{isSuccess && data?.oauthApps.length === 0 && <GenericNoResults />}
 			{isSuccess && data?.oauthApps.length > 0 && (
 				<GenericTable>
@@ -86,7 +75,7 @@ const OAuthAppsTable = (): ReactElement => {
 									{name}
 								</GenericTableCell>
 								<GenericTableCell withTruncatedText>{createdBy}</GenericTableCell>
-								<GenericTableCell withTruncatedText>{_createdAt}</GenericTableCell>
+								<GenericTableCell withTruncatedText>{formatDateAndTime(_createdAt)}</GenericTableCell>
 							</GenericTableRow>
 						))}
 					</GenericTableBody>

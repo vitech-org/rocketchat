@@ -94,13 +94,6 @@ const ChannelsTable = () => {
 		[channelRoute, groupsRoute],
 	);
 
-	if (isFetched) {
-		
-		// data.result.forEach((element) => {
-		// 	if (element.ts.length > 10)
-		// 		element.ts = Intl.DateTimeFormat('fa-IR').format(new Date(element.ts))
-		// })
-	}
 	return (
 		<>
 			<FilterByText autoFocus placeholder={t('Search_Channels')} onChange={({ text }): void => setText(text)} />

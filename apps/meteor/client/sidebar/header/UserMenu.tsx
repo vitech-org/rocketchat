@@ -17,13 +17,14 @@ const UserMenu = ({ user }: { user: IUser }) => {
 	const sections = useUserMenu(user);
 	const items = sections.reduce((acc, { items }) => [...acc, ...items], [] as GenericMenuItemProps[]);
 
-	const handleAction = useHandleMenuAction(items, () => { setIsOpen(false) });
+	const handleAction = useHandleMenuAction(items, () => setIsOpen(false));
 
 	return (
 		<FeaturePreview feature='navigationBar'>
 			<FeaturePreviewOff>
 				<GenericMenu
 					icon={<UserAvatarWithStatus />}
+					placement='bottom-end'
 					selectionMode='multiple'
 					sections={sections}
 					title={t('User_menu')}
@@ -36,6 +37,7 @@ const UserMenu = ({ user }: { user: IUser }) => {
 				<GenericMenu
 					icon={<UserAvatarWithStatusUnstable />}
 					medium
+					placement='bottom-end'
 					selectionMode='multiple'
 					sections={sections}
 					title={t('User_menu')}

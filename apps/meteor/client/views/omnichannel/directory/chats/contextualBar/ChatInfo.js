@@ -81,22 +81,19 @@ function ChatInfo({ id, route }) {
 		routePath.push(
 			route
 				? {
-					tab: 'room-info',
-					context: 'edit',
-					id,
-				}
+						tab: 'room-info',
+						context: 'edit',
+						id,
+				  }
 				: {
-					page: 'chats',
-					id,
-					bar: 'edit',
-				},
+						page: 'chats',
+						id,
+						bar: 'edit',
+				  },
 		);
 	});
 
 	const customFieldEntries = Object.entries(livechatData || {}).filter(([key]) => checkIsVisibleAndScopeRoom(key) && livechatData[key]);
-	debugger;
-	if (ts.length > 9)
-		ts = Intl.DateTimeFormat('fa-IR').format(new Date(ts))
 
 	return (
 		<>

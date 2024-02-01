@@ -20,7 +20,6 @@ const anon = {
  */
 
 const UserAvatarWithStatus = () => {
-
 	const t = useTranslation();
 	const user = useUser();
 	const presenceDisabled = useSetting<boolean>('Presence_broadcast_disabled');

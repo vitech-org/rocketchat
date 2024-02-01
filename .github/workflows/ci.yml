@@ -8,7 +8,7 @@ on:
     branches: '**'
   push:
     branches:
-      - develop
+      - new
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
@@ -52,7 +52,7 @@ jobs:
       - id: by-tag
         run: |
           if echo "$GITHUB_REF_NAME" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+$' ; then
-            RELEASE="latest"
+            RELEASE="new"
           elif echo "$GITHUB_REF_NAME" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+-rc\.[0-9]+$' ; then
             RELEASE="release-candidate"
           fi
@@ -73,8 +73,8 @@ jobs:
           # else
           #   DOCKER_TAG="gh-${{ github.run_id }}"
           # fi
-          echo "DOCKER_TAG: latest"
-          echo "gh-docker-tag=latest" >> $GITHUB_OUTPUT
+          echo "DOCKER_TAG: new"
+          echo "gh-docker-tag=new" >> $GITHUB_OUTPUT
   packages-build:
     name: 📦 Build Packages
     needs: [release-versions]
@@ -140,7 +140,7 @@ jobs:
   build-prod:
     name: 📦 Meteor Build - official
     needs: [release-versions, packages-build]
-    if: (github.event_name == 'release' || github.ref == 'refs/heads/develop')
+    if: (github.event_name == 'release' || github.ref == 'refs/heads/new')
     runs-on: ubuntu-20.04
 
     steps:
@@ -163,7 +163,7 @@ jobs:
   build-gh-docker-coverage:
     name: 🚢 Build Docker Images for Testing
     needs: [build, release-versions]
-    if: (github.event.pull_request.head.repo.full_name == github.repository || github.event_name == 'release' || github.ref == 'refs/heads/develop')
+    if: (github.event.pull_request.head.repo.full_name == github.repository || github.event_name == 'release' || github.ref == 'refs/heads/new')
     runs-on: ubuntu-20.04
 
     env:
@@ -347,7 +347,7 @@ jobs:
   deploy:
     name: 🚀 Publish build assets
     runs-on: ubuntu-20.04
-    if: github.event_name == 'release' || github.ref == 'refs/heads/develop'
+    if: github.event_name == 'release' || github.ref == 'refs/heads/new'
     needs: [build-gh-docker, release-versions]
 
     steps:
@@ -392,7 +392,7 @@ jobs:
     name: 🚢 Build Docker Image (preview)
     runs-on: ubuntu-20.04
     needs: [build, release-versions]
-    if: github.event_name == 'release' || github.ref == 'refs/heads/develop'
+    if: github.event_name == 'release' || github.ref == 'refs/heads/new'
     steps:
       - uses: actions/checkout@v3
 
@@ -461,7 +461,7 @@ jobs:
   #         if [[ '${{ matrix.release }}' = 'preview' ]]; then
   #           IMAGE_NAME="${IMAGE_NAME}.preview"
   #         fi;
-  #         # 'develop' or 'tag'
+  #         # 'new' or 'tag'
   #         DOCKER_TAG=$GITHUB_REF_NAME
   #         # append the variant name to docker tag
   #         if [[ '${{ matrix.release }}' = 'alpine' ]]; then
@@ -478,8 +478,8 @@ jobs:
   #             RELEASE="${RELEASE}-${{ matrix.release }}"
   #           fi;
   #           echo "RELEASE: $RELEASE"
-  #           if [[ $RELEASE == 'latest' ]]; then
-  #             if [[ '${{ needs.release-versions.outputs.latest-release }}' == $GITHUB_REF_NAME ]]; then
+  #           if [[ $RELEASE == 'new' ]]; then
+  #             if [[ '${{ needs.release-versions.outputs.new-release }}' == $GITHUB_REF_NAME ]]; then
   #               docker tag ${{ steps.gh-docker.outputs.gh-image-name }} $IMAGE_NAME:$RELEASE
   #               docker push $IMAGE_NAME:$RELEASE
   #               PUBLISHED_TAGS+=("$IMAGE_NAME:$RELEASE")
@@ -542,7 +542,7 @@ jobs:
   #     - name: Publish Docker images
   #       run: |
   #         DH_IMAGE_NAME="rocketchat/${{ matrix.service }}-service"
-  #         # 'develop' or 'tag'
+  #         # 'new' or 'tag'
   #         DOCKER_TAG=$GITHUB_REF_NAME
   #         PUBLISHED_TAGS=()
   #         # tag and push the specific tag version
@@ -606,7 +606,7 @@ jobs:
     #         GIT_BRANCH="${GITHUB_REF#*heads/}"
     #         ARTIFACT_NAME="${REPO_VERSION}.$GITHUB_SHA"
     #         RC_VERSION="${REPO_VERSION}"
-    #         RC_RELEASE=develop
+    #         RC_RELEASE=new
     #       fi;
     #       curl -H "Content-Type: application/json" -H "X-Update-Token: $UPDATE_TOKEN" -d \
     #           "{\"nodeVersion\": \"${{ needs.release-versions.outputs.node-version }}\", \"compatibleMongoVersions\": [\"4.4\", \"5.0\", \"6.0\"], \"commit\": \"$GITHUB_SHA\", \"tag\": \"$RC_VERSION\", \"branch\": \"$GIT_BRANCH\", \"artifactName\": \"$ARTIFACT_NAME\", \"releaseType\": \"$RC_RELEASE\"}" \

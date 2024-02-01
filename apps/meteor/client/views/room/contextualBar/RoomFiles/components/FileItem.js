@@ -18,10 +18,6 @@ const FileItem = ({ fileData, isDeletionAllowed, onClickDelete }) => {
 
 	const { _id, name, url, uploadedAt, ts, type, typeGroup, style, className, user } = fileData;
 
-	var persianUploaded = '';
-	if (persianUploaded == '' && uploadedAt.length > 10)
-		persianUploaded = Intl.DateTimeFormat('fa-IR').format(new Date(uploadedAt))
-
 	return (
 		<Box display='flex' p={12} borderRadius='x4' style={style} className={[className, hoverClass]}>
 			<Box
@@ -46,7 +42,7 @@ const FileItem = ({ fileData, isDeletionAllowed, onClickDelete }) => {
 						@{user?.username}
 					</Box>
 					<Box color='hint' fontScale='micro'>
-						{persianUploaded}
+						{format(uploadedAt)}
 					</Box>
 				</Box>
 			</Box>

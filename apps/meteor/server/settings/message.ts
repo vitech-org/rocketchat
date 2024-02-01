@@ -238,97 +238,97 @@ export const createMessageSettings = () =>
 			public: true,
 			i18nDescription: 'Message_VideoRecorderEnabledDescription',
 		});
-		//await this.add('AutoTranslate_Enabled', false, {
-		//	type: 'boolean',
-		//	group: 'Message',
-		//	section: 'AutoTranslate',
-		//	public: true,
-		//});
+		await this.add('AutoTranslate_Enabled', false, {
+			type: 'boolean',
+			group: 'Message',
+			section: 'AutoTranslate',
+			public: true,
+		});
 
-		//await this.add('AutoTranslate_AutoEnableOnJoinRoom', false, {
-		//	type: 'boolean',
-		//	group: 'Message',
-		//	section: 'AutoTranslate',
-		//	public: true,
-		//	enableQuery: [{ _id: 'AutoTranslate_Enabled', value: true }],
-		//});
+		await this.add('AutoTranslate_AutoEnableOnJoinRoom', false, {
+			type: 'boolean',
+			group: 'Message',
+			section: 'AutoTranslate',
+			public: true,
+			enableQuery: [{ _id: 'AutoTranslate_Enabled', value: true }],
+		});
 
-		//await this.add('AutoTranslate_ServiceProvider', 'google-translate', {
-		//	type: 'select',
-		//	group: 'Message',
-		//	section: 'AutoTranslate',
-		//	values: [
-		//		{
-		//			key: 'google-translate',
-		//			i18nLabel: 'AutoTranslate_Google',
-		//		},
-		//		{
-		//			key: 'deepl-translate',
-		//			i18nLabel: 'AutoTranslate_DeepL',
-		//		},
-		//		{
-		//			key: 'microsoft-translate',
-		//			i18nLabel: 'AutoTranslate_Microsoft',
-		//		},
-		//	],
-		//	enableQuery: [{ _id: 'AutoTranslate_Enabled', value: true }],
-		//	i18nLabel: 'AutoTranslate_ServiceProvider',
-		//	public: true,
-		//});
+		await this.add('AutoTranslate_ServiceProvider', 'google-translate', {
+			type: 'select',
+			group: 'Message',
+			section: 'AutoTranslate',
+			values: [
+				{
+					key: 'google-translate',
+					i18nLabel: 'AutoTranslate_Google',
+				},
+				{
+					key: 'deepl-translate',
+					i18nLabel: 'AutoTranslate_DeepL',
+				},
+				{
+					key: 'microsoft-translate',
+					i18nLabel: 'AutoTranslate_Microsoft',
+				},
+			],
+			enableQuery: [{ _id: 'AutoTranslate_Enabled', value: true }],
+			i18nLabel: 'AutoTranslate_ServiceProvider',
+			public: true,
+		});
 
-		//await this.add('AutoTranslate_GoogleAPIKey', '', {
-		//	type: 'string',
-		//	group: 'Message',
-		//	section: 'AutoTranslate_Google',
-		//	public: false,
-		//	i18nLabel: 'AutoTranslate_APIKey',
-		//	enableQuery: [
-		//		{
-		//			_id: 'AutoTranslate_Enabled',
-		//			value: true,
-		//		},
-		//		{
-		//			_id: 'AutoTranslate_ServiceProvider',
-		//			value: 'google-translate',
-		//		},
-		//	],
-		//});
+		await this.add('AutoTranslate_GoogleAPIKey', '', {
+			type: 'string',
+			group: 'Message',
+			section: 'AutoTranslate_Google',
+			public: false,
+			i18nLabel: 'AutoTranslate_APIKey',
+			enableQuery: [
+				{
+					_id: 'AutoTranslate_Enabled',
+					value: true,
+				},
+				{
+					_id: 'AutoTranslate_ServiceProvider',
+					value: 'google-translate',
+				},
+			],
+		});
 
-		//await this.add('AutoTranslate_DeepLAPIKey', '', {
-		//	type: 'string',
-		//	group: 'Message',
-		//	section: 'AutoTranslate_DeepL',
-		//	public: false,
-		//	i18nLabel: 'AutoTranslate_APIKey',
-		//	enableQuery: [
-		//		{
-		//			_id: 'AutoTranslate_Enabled',
-		//			value: true,
-		//		},
-		//		{
-		//			_id: 'AutoTranslate_ServiceProvider',
-		//			value: 'deepl-translate',
-		//		},
-		//	],
-		//});
+		await this.add('AutoTranslate_DeepLAPIKey', '', {
+			type: 'string',
+			group: 'Message',
+			section: 'AutoTranslate_DeepL',
+			public: false,
+			i18nLabel: 'AutoTranslate_APIKey',
+			enableQuery: [
+				{
+					_id: 'AutoTranslate_Enabled',
+					value: true,
+				},
+				{
+					_id: 'AutoTranslate_ServiceProvider',
+					value: 'deepl-translate',
+				},
+			],
+		});
 
-		//await this.add('AutoTranslate_MicrosoftAPIKey', '', {
-		//	type: 'string',
-		//	group: 'Message',
-		//	section: 'AutoTranslate_Microsoft',
-		//	public: false,
-		//	i18nLabel: 'AutoTranslate_Microsoft_API_Key',
-		//	enableQuery: [
-		//		{
-		//			_id: 'AutoTranslate_Enabled',
-		//			value: true,
-		//		},
-		//		{
-		//			_id: 'AutoTranslate_ServiceProvider',
-		//			value: 'microsoft-translate',
-		//		},
-		//	],
-		//});
+		await this.add('AutoTranslate_MicrosoftAPIKey', '', {
+			type: 'string',
+			group: 'Message',
+			section: 'AutoTranslate_Microsoft',
+			public: false,
+			i18nLabel: 'AutoTranslate_Microsoft_API_Key',
+			enableQuery: [
+				{
+					_id: 'AutoTranslate_Enabled',
+					value: true,
+				},
+				{
+					_id: 'AutoTranslate_ServiceProvider',
+					value: 'microsoft-translate',
+				},
+			],
+		});
 		await this.add('HexColorPreview_Enabled', true, {
 			type: 'boolean',
 			i18nLabel: 'Enabled',
@@ -337,23 +337,23 @@ export const createMessageSettings = () =>
 			public: true,
 		});
 
-		await this.section('Katex', async () => {
+		await this.section('Katex', async function () {
 			const enableQuery = {
 				_id: 'Katex_Enabled',
 				value: true,
 			};
-			await settingsRegistry.add('Katex_Enabled', true, {
+			await this.add('Katex_Enabled', true, {
 				type: 'boolean',
 				public: true,
 				i18nDescription: 'Katex_Enabled_Description',
 			});
-			await settingsRegistry.add('Katex_Parenthesis_Syntax', true, {
+			await this.add('Katex_Parenthesis_Syntax', true, {
 				type: 'boolean',
 				public: true,
 				enableQuery,
 				i18nDescription: 'Katex_Parenthesis_Syntax_Description',
 			});
-			await settingsRegistry.add('Katex_Dollar_Syntax', false, {
+			await this.add('Katex_Dollar_Syntax', false, {
 				type: 'boolean',
 				public: true,
 				enableQuery,
@@ -361,14 +361,14 @@ export const createMessageSettings = () =>
 			});
 		});
 
-		await this.section('Google Maps', async () => {
-			await settingsRegistry.add('MapView_Enabled', false, {
+		await this.section('Google Maps', async function () {
+			await this.add('MapView_Enabled', false, {
 				type: 'boolean',
 				public: true,
 				i18nLabel: 'MapView_Enabled',
 				i18nDescription: 'MapView_Enabled_Description',
 			});
-			await settingsRegistry.add('MapView_GMapsAPIKey', '', {
+			await this.add('MapView_GMapsAPIKey', '', {
 				type: 'string',
 				public: true,
 				i18nLabel: 'MapView_GMapsAPIKey',

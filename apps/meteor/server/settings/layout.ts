@@ -43,7 +43,7 @@ export const createLayoutSettings = () =>
 			});
 		});
 		await this.section('Layout_Home_Page_Content_Title', async function () {
-			await this.add('Layout_Home_Title', 'خانه', {
+			await this.add('Layout_Home_Title', 'Home', {
 				type: 'string',
 				public: true,
 			});

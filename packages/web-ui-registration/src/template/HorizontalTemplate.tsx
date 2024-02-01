@@ -9,10 +9,10 @@ import {
 import { useSetting, useAssetWithDarkModePath } from '@rocket.chat/ui-contexts';
 import type { ReactElement, ReactNode } from 'react';
 
-/*import LoginPoweredBy from '../components/LoginPoweredBy';*/
+import LoginPoweredBy from '../components/LoginPoweredBy';
 import LoginSwitchLanguageFooter from '../components/LoginSwitchLanguageFooter';
 import LoginTerms from '../components/LoginTerms';
-/*import { RegisterTitle } from '../components/RegisterTitle';*/
+import { RegisterTitle } from '../components/RegisterTitle';
 
 const HorizontalTemplate = ({ children }: { children: ReactNode }): ReactElement => {
 	const hideLogo = useSetting<boolean>('Layout_Login_Hide_Logo');
@@ -26,9 +26,9 @@ const HorizontalTemplate = ({ children }: { children: ReactNode }): ReactElement
 		>
 			<HorizontalWizardLayoutAside>
 				<HorizontalWizardLayoutTitle>
-					{/*<RegisterTitle />*/}
+					<RegisterTitle />
 				</HorizontalWizardLayoutTitle>
-				{/*<LoginPoweredBy />*/}
+				<LoginPoweredBy />
 			</HorizontalWizardLayoutAside>
 			<HorizontalWizardLayoutContent>
 				{children}

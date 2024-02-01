@@ -13,17 +13,17 @@ export const upsertPermissions = async (): Promise<void> => {
 	}
 
 	const defaultRoles = [
-		{ name: 'admin', scope: 'Users', description: 'مدیر' },
-		{ name: 'moderator', scope: 'Subscriptions', description: 'مجری' },
-		{ name: 'leader', scope: 'Subscriptions', description: 'رهبر' },
-		{ name: 'owner', scope: 'Subscriptions', description: 'مالک' },
+		{ name: 'admin', scope: 'Users', description: 'Admin' },
+		{ name: 'moderator', scope: 'Subscriptions', description: 'Moderator' },
+		{ name: 'leader', scope: 'Subscriptions', description: 'Leader' },
+		{ name: 'owner', scope: 'Subscriptions', description: 'Owner' },
 		{ name: 'user', scope: 'Users', description: '' },
 		{ name: 'bot', scope: 'Users', description: '' },
 		{ name: 'app', scope: 'Users', description: '' },
-		{ name: 'guest', scope: 'Users', description: 'مهمان' },
-		{ name: 'anonymous', scope: 'Users', description: 'ناشناس' },
-		{ name: 'livechat-agent', scope: 'Users', description: 'نماینده گفتگوی زنده' },
-		{ name: 'livechat-manager', scope: 'Users', description: 'مدیر گفتگوی زنده' },
+		{ name: 'guest', scope: 'Users', description: '' },
+		{ name: 'anonymous', scope: 'Users', description: '' },
+		{ name: 'livechat-agent', scope: 'Users', description: 'Livechat Agent' },
+		{ name: 'livechat-manager', scope: 'Users', description: 'Livechat Manager' },
 	] as const;
 
 	for await (const role of defaultRoles) {

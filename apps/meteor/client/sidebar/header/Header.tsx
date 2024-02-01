@@ -39,7 +39,6 @@ const Header = (): ReactElement => {
 				)}
 				{!user && <Login title={t('Login')} />}
 			</Sidebar.TopBar.Actions>
-
 		</Sidebar.TopBar.Section>
 	);
 };
