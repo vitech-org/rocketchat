@@ -20,7 +20,7 @@ const UserMentionElement = ({ mention }: UserMentionElementProps): ReactElement 
 
 	if (mention === 'all') {
 		return (
-			<Message.Highlight title={t('Mentions_all_room_members')} variant='relevant'>
+			<Message.Highlight title={t('Mentions_online_room_members')} variant='relevant'>
 				{handleUserMention('all', showMentionSymbol)}
 			</Message.Highlight>
 		);
