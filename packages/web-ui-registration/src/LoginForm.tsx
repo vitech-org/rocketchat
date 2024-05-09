@@ -79,6 +79,27 @@ export const LoginForm = ({ setLoginRoute }: { setLoginRoute: DispatchLoginRoute
 	const usernameOrEmailPlaceholder = String(useSetting('Accounts_EmailOrUsernamePlaceholder'));
 	const passwordPlaceholder = String(useSetting('Accounts_PasswordPlaceholder'));
 
+	const generateCaptcha = () => {
+		const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+		let captcha = '';
+		for (let i = 0; i < 6; i++) {
+			captcha += chars.charAt(Math.floor(Math.random() * chars.length));
+		}
+		return captcha;
+	};
+
+	const [captcha, setCaptcha] = useState(generateCaptcha());
+	const [userInput, setUserInput] = useState('');
+
+	const handleChange = (e) => {
+		setUserInput(e.target.value);
+	};
+
+	const handleRefresh = () => {
+		setCaptcha(generateCaptcha());
+		setUserInput('');
+	};
+
 	const loginMutation = useMutation({
 		mutationFn: (formData: { username: string; password: string }) => {
 			return login(formData.username, formData.password);
@@ -126,7 +147,12 @@ export const LoginForm = ({ setLoginRoute }: { setLoginRoute: DispatchLoginRoute
 			ref={loginFormRef}
 			aria-labelledby={formLabelId}
 			aria-describedby='welcomeTitle'
-			onSubmit={handleSubmit(async (data) => loginMutation.mutate(data))}
+			onSubmit={handleSubmit(async (data) => {
+				if (userInput === captcha)
+					loginMutation.mutate(data)
+			})
+			}
+
 		>
 			<Form.Header>
 				<Form.Title id={formLabelId}>{t('registration.component.login')}</Form.Title>
@@ -192,7 +218,27 @@ export const LoginForm = ({ setLoginRoute }: { setLoginRoute: DispatchLoginRoute
 									</FieldRow>
 								)}
 							</Field>
+
+							<Field>
+								{/* <FieldLabel>
+									{t('registration.component.form.captcha')}
+								</FieldLabel> */}
+								<FieldRow style={{ alignItems: 'center' }}>
+									<div style={{ background: '#f2f2f2', textAlign: 'center' }}>
+										<div>
+											<div style={{ background: '#ccc', padding: '10px', marginBottom: '10px' }}>{captcha}</div>
+											<input type="text" value={userInput} onChange={handleChange} />
+
+											<button type="button" className="rcx-box rcx-button--small-square rcx-button--icon-secondary rcx-button--square" style={{ display: "contents" }} onClick={handleRefresh}>
+												<i aria-hidden="true" className="rcx-box rcx-box--full rcx-icon--name-refresh rcx-icon rcx-css-4pvxx3"></i>
+											</button>
+										</div>
+									</div>
+								</FieldRow>
+
+							</Field>
 						</FieldGroup>
+
 						{errorOnSubmit && <FieldGroup disabled={loginMutation.isLoading}>{renderErrorOnSubmit(errorOnSubmit)}</FieldGroup>}
 					</Form.Container>
 					<Form.Footer>
@@ -206,6 +252,7 @@ export const LoginForm = ({ setLoginRoute }: { setLoginRoute: DispatchLoginRoute
 								New here? <ActionLink onClick={(): void => setLoginRoute('register')}>Create an account</ActionLink>
 							</Trans> */}
 						</p>
+
 					</Form.Footer>
 				</>
 			)}

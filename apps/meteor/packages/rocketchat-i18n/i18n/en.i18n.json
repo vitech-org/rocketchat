@@ -6193,5 +6193,6 @@
   "Unlimited_seats": "Unlimited seats",
   "Seat_limit_reached": "Seat limit reached",
   "Seat_limit_reached_Description": "Your workspace reached its contractual seat limit. Buy more seats to add more users.",
-  "Buy_more_seats": "Buy more seats"
+  "Buy_more_seats": "Buy more seats",
+  "registration.component.form.captcha": "Enter Captcha"
 }

@@ -3679,5 +3679,6 @@
   "Removed__roomName__from_the_team": "حذف #{{roomName}}  از این تیم انجام شد",
   "Removed__username__from_the_team": "حذف @{{user_removed}} از این تیم انجام شد",
   "User_added_to": "اضافه شد {{user_added}}",
-  "changed_room_description_to__room_description_": "توضیحات اتاق به : {{room_description}} تغییر یافت"
+  "changed_room_description_to__room_description_": "توضیحات اتاق به : {{room_description}} تغییر یافت",
+  "registration.component.form.captcha": "کد کپچا را وارد نمایید"
 }
