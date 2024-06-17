@@ -90,13 +90,45 @@ export const LoginForm = ({ setLoginRoute }: { setLoginRoute: DispatchLoginRoute
 
 	const [captcha, setCaptcha] = useState(generateCaptcha());
 	const [userInput, setUserInput] = useState('');
+	const canvasRef = useRef<HTMLCanvasElement>(null);
 
 	const handleChange = (e) => {
 		setUserInput(e.target.value);
 	};
 
 	const handleRefresh = () => {
-		setCaptcha(generateCaptcha());
+		var code = generateCaptcha();
+		setCaptcha(code);
+		const canvas = canvasRef.current;
+		if (canvas == null)
+			return;
+		const ctx = canvas.getContext('2d');
+		if (!ctx) {
+			console.error('Canvas 2D context is not supported');
+			return;
+		}
+		// Clear the canvas
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+		// Set the font and text properties
+		ctx.font = '30px Arial';
+		ctx.fillStyle = '#333';
+		ctx.textAlign = 'center';
+		ctx.textBaseline = 'middle';
+
+		// Draw the captcha code on the canvas
+		for (let i = 0; i < code.length; i++) {
+			ctx.save();
+			ctx.translate(50 + i * 50, 35);
+			ctx.rotate((Math.PI / 180) * (Math.random() * 30 - 15));
+			ctx.fillText(code[i], 0, 0);
+			ctx.restore();
+		}
+
+		// Prevent the canvas from being copied
+		canvas.addEventListener('contextmenu', (e) => e.preventDefault());
+		canvas.addEventListener('copy', (e) => e.preventDefault());
+		canvas.addEventListener('paste', (e) => e.preventDefault());
 		setUserInput('');
 	};
 
@@ -126,6 +158,7 @@ export const LoginForm = ({ setLoginRoute }: { setLoginRoute: DispatchLoginRoute
 		if (loginFormRef.current) {
 			loginFormRef.current.focus();
 		}
+		handleRefresh();
 	}, [errorOnSubmit]);
 
 	const renderErrorOnSubmit = (error: LoginErrors) => {
@@ -221,12 +254,14 @@ export const LoginForm = ({ setLoginRoute }: { setLoginRoute: DispatchLoginRoute
 
 							<Field>
 								{/* <FieldLabel>
-									{t('registration.component.form.captcha')}
-								</FieldLabel> */}
+								{t('registration.component.form.captcha')}
+							</FieldLabel> */}
 								<FieldRow style={{ alignItems: 'center' }}>
 									<div style={{ background: '#f2f2f2', textAlign: 'center' }}>
 										<div>
-											<div style={{ background: '#ccc', padding: '10px', marginBottom: '10px' }}>{captcha}</div>
+
+											<canvas ref={canvasRef} width="340" height="70" style={{ background: '#ccc', padding: '10px', marginBottom: '10px' }} />
+
 											<input type="text" value={userInput} onChange={handleChange} />
 
 											<button type="button" className="rcx-box rcx-button--small-square rcx-button--icon-secondary rcx-button--square" style={{ display: "contents" }} onClick={handleRefresh}>
@@ -249,8 +284,8 @@ export const LoginForm = ({ setLoginRoute }: { setLoginRoute: DispatchLoginRoute
 						</ButtonGroup>
 						<p>
 							{/* <Trans i18nKey='registration.page.login.register'>
-								New here? <ActionLink onClick={(): void => setLoginRoute('register')}>Create an account</ActionLink>
-							</Trans> */}
+							New here? <ActionLink onClick={(): void => setLoginRoute('register')}>Create an account</ActionLink>
+						</Trans> */}
 						</p>
 
 					</Form.Footer>
