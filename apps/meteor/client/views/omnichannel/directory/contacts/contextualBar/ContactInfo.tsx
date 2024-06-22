@@ -96,6 +96,10 @@ const ContactInfo = ({ id: contactId, rid: roomId = '', route }: ContactInfoProp
 		return <Box mbs={16}>{t('Contact_not_found')}</Box>;
 	}
 
+	if (contact && contact.ts.length > 9)
+		contact.ts = Intl.DateTimeFormat('fa-IR').format(new Date(contact.ts))
+
+
 	const { username, visitorEmails, phone, ts, livechatData, lastChat, contactManager, status } = contact;
 
 	const showContactHistory = currentRouteName === 'live' && lastChat;

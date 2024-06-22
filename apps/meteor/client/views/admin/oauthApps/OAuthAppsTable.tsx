@@ -46,6 +46,14 @@ const OAuthAppsTable = (): ReactElement => {
 		</>
 	);
 
+	if (isSuccess && data?.oauthApps.length > 0) {
+		data.oauthApps.forEach((element) => {
+			if (element._createdAt.length > 10)
+				element._createdAt = new Intl.DateTimeFormat('fa-IR').format(new Date(element._createdAt.substring(0, 10))).toString(); //+ " " + element._createdAt.substring(11, 19);
+		}
+		);
+	}
+
 	return (
 		<>
 			{isLoading && (
