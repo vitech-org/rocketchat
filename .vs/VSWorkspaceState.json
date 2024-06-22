@@ -7,5 +7,5 @@
     "\\apps\\meteor\\client\\components",
     "\\apps\\meteor\\client\\components\\UserInfo"
   ],
-  "PreviewInSolutionExplorer": true
+  "PreviewInSolutionExplorer": false
 }
